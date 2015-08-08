@@ -1,0 +1,31 @@
+{
+  "name": "ngMightyBoilerplate",
+  "version": "0.0.0",
+  "description": "angular boilerplate",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heiso/ngMightyBoilerplate.git"
+  },
+  "author": "Alexandre Moatty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heiso/ngMightyBoilerplate/issues"
+  },
+  "homepage": "https://github.com/heiso/ngMightyBoilerplate",
+  "devDependencies": {
+    "bower": "~1.3.12",
+    "grunt": "~0.4.5",
+    "grunt-bump": "0.0.16",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-copy": "~0.6.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-sass": "~0.8.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-html2js": "~0.2.9",
+    "grunt-ssh": "~0.12.0",
+    "grunt-ssh-deploy": "~0.2.2"
+  }
+}

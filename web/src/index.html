@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="appCtrl" app-version="<%= version %>">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>"/>
+    <% }); %>
+
+  </head>
+  <body>
+
+    <div ui-view="main"></div>
+
+    <!-- compiled JS --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script>
+    <% }); %>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "ngMightyBoilerplate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/heiso/ngMightyBoilerplate",
+  "authors": [
+    "Alexandre Moatty <heiso.android@gmail.com>"
+  ],
+  "description": "angular boilerplate",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3",
+    "ui-router": "~0.2.13",
+    "lodash": "~3.8.0",
+    "lumx": "~0.3.74"
+  }
+}
