@@ -1,7 +1,9 @@
 var LAN = '192.168.1';
 var PORT = 8934;
 
-var net = require('net'),
+var app = require('express')(),
+    http = require('http').Server(app),
+    net = require('net'),
     request = require('request'),
     Promise = require('es6-promise').Promise;
     Socket = net.Socket;
@@ -67,16 +69,13 @@ function getBlinkServers() {
     });
 }
 
+http.listen(3000, function() {
+  console.log('listening on *:3000');
+});
 
-getBlinkServers()
-  .then(function(servers) {
-    for (var i = 0; i < servers.length; i++) {
-      console.log('activate', servers[i]);
-      request({
-        'url': 'http://'+servers[i].host+':'+servers[i].port+'/blink1/pattern/play',
-        'qs': {
-          'pname': 'rain'
-        }
-      });
-    }
-  });
+app.get('/servers', function(req, res) {
+  getBlinkServers()
+    .then(function(servers) {
+      res.send(servers);
+    });
+});
