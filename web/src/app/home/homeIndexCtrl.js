@@ -4,8 +4,10 @@
     .module('app.home')
     .controller('homeIndexCtrl', HomeIndexCtrl);
 
-  function HomeIndexCtrl($http) {
+  function HomeIndexCtrl(blinkServers) {
     var vm = this;
+
+    vm.blinkServers = blinkServers;
   }
 
 })();
