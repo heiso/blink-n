@@ -3,8 +3,10 @@
   <head>
     <title></title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>"/>
     <% }); %>
@@ -12,7 +14,12 @@
   </head>
   <body>
 
-    <div ui-view="main"></div>
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <h1>Blink(n)</h1>
+      </div>
+    </md-toolbar>
+    <div class="main-view" ui-view="main"></div>
 
     <!-- compiled JS --><% scripts.forEach( function ( file ) { %>
     <script type="text/javascript" src="<%= file %>"></script>

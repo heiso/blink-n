@@ -1,3 +1,58 @@
-<ul>
-  <li ng-repeat="server in vm.blinkServers">{{server.host}}</li>
-</ul>
+<md-button class="md-fab page-button" ng-click="vm.refreshServers()" aria-label="Refresh">
+  <md-icon>autorenew</md-icon>
+</md-button>
+
+<md-content layout="row" layout-align="center center">
+
+  <md-content flex="60">
+    <md-card>
+      <md-progress-linear ng-show="vm.showLoading" md-mode="indeterminate"></md-progress-linear>
+      <md-card-content class="list-container">
+        <md-list>
+
+          <md-list-item class="md-with-secondary" ng-repeat="server in vm.servers">
+            <md-button class="md-no-style">
+              <div class="md-list-item-inner">
+                <div class="md-avatar" ng-style="{'background-color': server.color}"></div>
+                <div class="md-list-item-text compact">
+                  <h3>{{server.name}}</h3>
+                  <p>{{server.host}}</p>
+                </div>
+              </div>
+            </md-button>
+            <md-button ng-click="vm.toggle(server)" class="md-secondary-container">
+              <md-icon ng-class="{'on': server.status}">flash_on</md-icon>
+            </md-button>
+          </md-list-item>
+
+          <md-list-item ng-show="vm.showEmptyList">
+            <div class="md-list-item-text compact">
+              <p>No servers detected. <a href="" on-click="return false" ng-click="vm.refreshServers()">Try again ?</a></p>
+            </div>
+          </md-list-item>
+
+          <md-list-item ng-show="vm.showLoading">
+            <div class="md-list-item-text compact">
+              <p>Searching for Blink(1) servers.</p>
+            </div>
+          </md-list-item>
+
+        </md-list>
+      </md-card-content>
+    </md-card>
+  </md-content>
+
+</md-content>
+
+<md-fab-speed-dial class="md-scale page-fob" md-direction="up">
+  <md-fab-trigger>
+    <md-button aria-label="menu" class="md-fab md-warn">
+      <md-icon>notifications_none</md-icon>
+    </md-button>
+  </md-fab-trigger>
+  <md-fab-actions>
+    <md-button ng-click="vm.broadcastPattern('mail')" class="md-fab">
+      <md-icon>mail</md-icon>
+    </md-button>
+  </md-fab-actions>
+</md-fab-speed-dial>

@@ -7,6 +7,7 @@ target/
 *.class
 template-ci
 .gitmodules
+.sass-cache
 
 containers/
 tags.txt
@@ -18,6 +19,4 @@ sample/bower_components
 vendors
 !empty
 reports/*
-sample/build
-sample/.sass-cache
 build

@@ -17,17 +17,14 @@ module.exports =
 
   vendors:
     js: [
-      'jquery/dist/jquery.min.js'
-      'jquery/dist/jquery.min.map'
       'lodash/lodash.min.js'
       'angular/angular.min.js'
       'angular/angular.min.js.map'
       'ui-router/release/angular-ui-router.min.js'
-      'velocity/velocity.js'
-      'moment/min/moment-with-locales.js'
-      'lumx/dist/lumx.js'
+      'angular-animate/angular-animate.js'
+      'angular-aria/angular-aria.js'
+      'angular-material/angular-material.js'
     ]
     css: [
-      'lumx/dist/lumx.css'
-      'lumx/dist/fonts/*'
+      'angular-material/angular-material.css'
     ]

@@ -1,4 +1,4 @@
-var LAN = '192.168.1';
+var LAN = '192.168.84';
 var PORT = 8934;
 
 var app = require('express')(),
@@ -31,7 +31,8 @@ function checkBlinkServer(host, port) {
       if (open) {
         resolve({
           'host': host,
-          'port': port
+          'port': port,
+          'status': false
         });
       } else {
         reject(host + ' closed');
@@ -85,4 +86,38 @@ app.get('/servers', function(req, res) {
     .then(function(servers) {
       res.send(servers);
     });
+  // setTimeout(function() {
+  //   res.send([
+  //     {
+  //       'name': 'test',
+  //       'host': '192.168.48.54',
+  //       'port': '8934'
+  //     },
+  //     {
+  //       'name': 'test',
+  //       'host': '192.168.48.54',
+  //       'port': '8934'
+  //     },
+  //     {
+  //       'name': 'test',
+  //       'host': '192.168.48.54',
+  //       'port': '8934'
+  //     },
+  //     {
+  //       'name': 'test',
+  //       'host': '192.168.48.54',
+  //       'port': '8934'
+  //     },
+  //     {
+  //       'name': 'test',
+  //       'host': '192.168.48.54',
+  //       'port': '8934'
+  //     },
+  //     {
+  //       'name': 'test',
+  //       'host': '192.168.48.54',
+  //       'port': '8934'
+  //     }
+  //   ]);
+  // }, 1000);
 });

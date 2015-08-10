@@ -10,15 +10,6 @@ angular
             'templateUrl': 'app/home/homeIndex.tpl.html',
             'controller': 'homeIndexCtrl as vm'
           }
-        },
-        resolve: {
-          'blinkServers': function(blinkService) {
-            return blinkService
-              .getAll()
-              .then(function(res) {
-                return res;
-              });
-          }
         }
       });
 

@@ -1,6 +1,6 @@
 angular
   .module('app', [
-    'lumx',
+    'ngMaterial',
     'templates-default',
     'ui.router',
 
